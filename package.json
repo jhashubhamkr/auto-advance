@@ -16,6 +16,6 @@
     "test:countdown": "node scripts/countdown-smoke.cjs"
   },
   "engines": { "node": ">=20" },
-  "devDependencies": { "playwright": "1.62.1" },
+  "devDependencies": { "playwright": "1.63.0" },
   "license": "MIT"
 }
