@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto Advance</title>
+  <link rel="stylesheet" href="popup.css">
+  <script src="../content/settings.js" defer></script><script src="popup.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="header-content"><span class="brand-icon" aria-hidden="true"></span><div><h1>Auto Advance</h1><p class="eyebrow">SET YOUR PACE</p></div></div>
+    <button id="theme-toggle" class="icon-button" type="button" aria-label="Switch to dark theme" aria-pressed="false" disabled>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.4 14.2A8.7 8.7 0 0 1 9.8 3.6 8.7 8.7 0 1 0 20.4 14.2Z"/></svg>
+    </button>
+  </header>
+  <label class="switch-row master" for="enabled"><span>Auto advance<small>Continue when a video finishes</small></span><input type="checkbox" id="enabled" disabled><span class="toggle" aria-hidden="true"></span></label>
+  <button id="advanced-toggle" class="disclosure" type="button" aria-expanded="false" aria-controls="advanced-panel" disabled><span>Settings</span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg></button>
+  <div id="advanced-panel" class="accordion" aria-hidden="true" inert><div class="accordion-inner">
+    <form id="settings-form">
+      <fieldset id="controls" disabled><legend class="sr-only">Settings</legend>
+        <section aria-labelledby="platform-heading"><h2 id="platform-heading">WHERE IT WORKS</h2>
+          <div class="platforms">
+            <button type="button" id="youtubeEnabled" class="platform" aria-label="YouTube Shorts" aria-pressed="true"><span class="brand youtube" aria-hidden="true"></span><span>YouTube Shorts</span></button>
+            <button type="button" id="instagramEnabled" class="platform" aria-label="Instagram Reels" aria-pressed="true"><span class="brand instagram" aria-hidden="true"></span><span>Instagram Reels</span></button>
+          </div>
+        </section>
+        <section class="range-field"><div class="range-label"><label for="repeatCount">Additional repeats</label><output id="repeatCount-value" for="repeatCount">0</output></div><input id="repeatCount" type="range" min="0" max="6" step="1" value="0"><p class="help">0 means play once, then continue.</p></section>
+        <section class="range-field"><div class="range-label"><label for="advanceDelayMs">Delay before continuing</label><output id="advanceDelayMs-value" for="advanceDelayMs">0.4s</output></div><input id="advanceDelayMs" type="range" min="0.1" max="3" step="0.1" value="0.4"></section>
+        <section class="duration-section">
+          <label class="switch-row" for="durationLimitEnabled"><span>Duration Limit</span><input id="durationLimitEnabled" type="checkbox"><span class="toggle" aria-hidden="true"></span></label>
+          <div class="range-field" id="duration-range"><div class="range-label"><label for="durationLimitSeconds">Skip if longer than</label><output id="durationLimitSeconds-value" for="durationLimitSeconds">60s</output></div><input id="durationLimitSeconds" type="range" min="30" max="120" step="1" value="60" disabled></div>
+        </section>
+        <button id="reset" type="button">Reset settings</button>
+      </fieldset>
+    </form>
+  </div></div>
+  <footer>
+    <p id="status" role="status" aria-live="polite" aria-atomic="true">Ready to work</p>
+    <a id="github-link" href="https://github.com/jhashubhamkr/auto-advance" target="_blank" rel="noopener noreferrer" aria-label="Auto Advance on GitHub" title="Auto Advance on GitHub"><span class="brand github" aria-hidden="true"></span></a>
+  </footer>
+</body>
+</html>

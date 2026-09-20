@@ -1,0 +1,21 @@
+{
+  "name": "auto-advance",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Automatically advance YouTube Shorts and Instagram Reels. Development tooling only; Chrome loads the extension directly.",
+  "repository": { "type": "git", "url": "https://github.com/jhashubhamkr/auto-advance.git" },
+  "homepage": "https://github.com/jhashubhamkr/auto-advance#readme",
+  "bugs": { "url": "https://github.com/jhashubhamkr/auto-advance/issues" },
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check.cjs",
+    "icons": "node scripts/icons.cjs",
+    "package": "node scripts/package.cjs",
+    "test:browser": "node scripts/browser-smoke.cjs",
+    "test:extension": "node scripts/extension-smoke.cjs",
+    "test:countdown": "node scripts/countdown-smoke.cjs"
+  },
+  "engines": { "node": ">=20" },
+  "devDependencies": { "playwright": "1.62.1" },
+  "license": "MIT"
+}

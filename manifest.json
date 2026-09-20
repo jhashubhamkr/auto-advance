@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Advance",
+  "description": "Automatically continue to the next YouTube Short or Instagram Reel, with optional additional repeats. Local settings only.",
+  "version": "0.1.0",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.youtube.com/*", "https://youtube.com/*", "https://www.instagram.com/*", "https://instagram.com/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup/popup.html", "default_title": "Auto Advance", "default_icon": { "16": "icons/icon-gray-16.png", "32": "icons/icon-gray-32.png" } },
+  "icons": { "16": "icons/icon-16.png", "32": "icons/icon-32.png", "48": "icons/icon-48.png", "128": "icons/icon-128.png" },
+  "content_scripts": [{
+    "matches": ["https://www.youtube.com/*", "https://youtube.com/*", "https://www.instagram.com/*", "https://instagram.com/*"],
+    "js": ["content/settings.js", "content/playback-monitor.js", "content/adapter-utils.js", "content/youtube-shorts-adapter.js", "content/instagram-reels-adapter.js", "content/countdown-overlay.js", "content/controller.js", "content/content-script.js"],
+    "run_at": "document_idle"
+  }],
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'self'" }
+}

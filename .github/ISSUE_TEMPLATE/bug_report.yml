@@ -1,0 +1,35 @@
+name: Bug report
+description: Report a playback, settings or compatibility problem.
+body:
+  - type: markdown
+    attributes:
+      value: "Please check existing issues and DEBUGGING.md first. Do not include credentials, private content, tracking URLs or full browser profiles. Use private security reporting for vulnerabilities."
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: Extension version, Chrome version and operating system.
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - YouTube Shorts
+        - Instagram Reels
+        - Popup or toolbar
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps, expected behavior and actual result
+      description: Include repeat count, delay, duration-limit state and the overlay caption if one appears.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Optional sanitized evidence
+      description: Small DOM fragment, redacted console excerpt or screenshot. Review everything before sharing.

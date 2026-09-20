@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Private security report
+    url: https://github.com/jhashubhamkr/auto-advance/security/advisories/new
+    about: Please report vulnerabilities privately.
